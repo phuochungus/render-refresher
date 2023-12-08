@@ -21,5 +21,5 @@ app.get('/test', async (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
-    setInterval(() => { fetchURLS(urls) }, 10 * 60 * 1)
+    setInterval(() => { fetchURLS(urls) }, 10 * 60 * 1000)
 });
