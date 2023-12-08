@@ -14,18 +14,12 @@ async function fetchURLS(urls) {
     return data
 }
 
-app.get('/', async (req, res) => {
-    await fetchURLS(urls);
-    res.sendStatus(200);
-});
-
 app.get('/test', async (req, res) => {
-    console.log('hello')
     res.sendStatus(200);
 });
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
-    setInterval(() => { fetchURLS(urls) }, 10 * 60 * 1000)
+    setInterval(() => { fetchURLS(urls) }, 10 * 60 * 1)
 });
